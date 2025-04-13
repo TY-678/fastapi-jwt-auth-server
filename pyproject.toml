@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "ty-fastapi-jwt-auth-server"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["TY <tyyyy66@icloud.com>"]
 readme = "README.md"
