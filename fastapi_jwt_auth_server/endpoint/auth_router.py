@@ -5,7 +5,9 @@ from fastapi_jwt_auth_server.schemas import Token, LoginRequest
 
 auth_router = APIRouter()
 security = HTTPBearer()
-auth_server = create_auth_server(AbstractUserStore)
+
+user_store = AbstractUserStore
+auth_server = create_auth_server(user_store=user_store)
 
 
 @auth_router.post("/login", response_model=Token)
