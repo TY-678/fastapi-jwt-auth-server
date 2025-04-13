@@ -17,7 +17,7 @@ class AuthServer:
         self.user_store = user_store
 
     async def authenticate_user(self, request: LoginRequest) -> Optional[dict]:
-        if user := await self.user_store.get_user(request.username):
+        if user := await self.user_store.get_user(self, username=request.username):
             if self._verify_password(user, request.password):
                 return user
         raise ValueError("Invalid username or password")
